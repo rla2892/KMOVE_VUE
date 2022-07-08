@@ -1,22 +1,22 @@
 <script>
-import TextBind from './components/TextBind.vue';
 export default {
-    components : {
-        // TextBind : TextBind // key, value 같아서 1개로 줄여도 됨
-        TextBind
+    methods: {
+        sayHello(){
+            return "hello hello";
+        }
     },
     data() {
         return {
-            // bind_url: "http://www.google.com",
-            bind_url: "http://www.daum.net",
-            bind_a: {
-                bind_url: "http://www.google.com",
-                domain_name: "google"
-            },
-            img :{
-                size_x: 100,
-                size_y: 100,
-                url: `https://placeimg.com/100/100/animals`
+            fruits: ["apple", "banana", "orange"],
+            cities: [
+                {name: 'new york', population: 200},
+                {name: 'pusan', population: 300},
+                {name: 'london', population: 320},
+            ],
+            user: {
+                name: 'dsfsf',
+                age: 21,
+                city: 'Seoul'
             }
         }
     }
@@ -24,17 +24,10 @@ export default {
 </script>
 
 <template>
-    <!-- <TextBind /> -->
-    <h2 id="title">Hello World</h2>
-    <a v-bind:href="bind_a.bind_url">{{bind_a.domain_name}}</a>
-    <img v-bind:src="img.url" alt="">
+    <h2>{{sayHello()}}</h2>
 </template>
 
-<style scoped>
-#title {
-    color:blueviolet;
-    text-align: center;
 
-}
+<style >
 
 </style>
